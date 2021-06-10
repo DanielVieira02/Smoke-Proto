@@ -14,7 +14,7 @@ namespace Paladin.Core.Player {
 
         #region Events
 
-        [HideInInspector] public UnityAction OnAttackAction = delegate { };
+        [HideInInspector] public UnityAction<InputAction.CallbackContext> OnAttackAction = delegate { };
         [HideInInspector] public UnityAction<Vector2> OnMoveAction = delegate { };
 
         #endregion
@@ -53,8 +53,7 @@ namespace Paladin.Core.Player {
 
         public void OnAttack(InputAction.CallbackContext context) {
 
-            if(context.phase == InputActionPhase.Performed)
-                if (OnAttackAction != null) OnAttackAction.Invoke();
+            if (OnAttackAction != null) OnAttackAction.Invoke(context);
 
         }
 

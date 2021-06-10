@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace Paladin.Core.Player {
 
     public class PlayerController : MonoBehaviour {
 
         [System.Serializable] public class MovementEvent : UnityEvent<Vector2> { }
-
+        [System.Serializable] public class InputActionEvent : UnityEvent<InputAction.CallbackContext> { }
 
         #region Variables & References
 
@@ -15,7 +16,7 @@ namespace Paladin.Core.Player {
 
         [Header("Input Events")]
 
-        [SerializeField] private UnityEvent OnAction = new UnityEvent();
+        [SerializeField] private InputActionEvent OnAction = new InputActionEvent();
         [SerializeField] private MovementEvent OnMove = new MovementEvent();
 
         #endregion
@@ -50,8 +51,8 @@ namespace Paladin.Core.Player {
             movementBehaviour.Move(direction);
         }
 
-        public void Action() {
-            OnAction?.Invoke();
+        public void Action(InputAction.CallbackContext action) {
+            OnAction?.Invoke(action);
         }
 
         #endregion
