@@ -1,0 +1,15 @@
+{
+    "name": "Paladin.Core",
+    "references": [
+        "GUID:bb5132b0ca60f9647afba64b37d61016"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

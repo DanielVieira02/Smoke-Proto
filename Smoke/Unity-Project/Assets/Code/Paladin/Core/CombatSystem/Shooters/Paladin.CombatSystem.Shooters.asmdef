@@ -1,0 +1,16 @@
+{
+    "name": "Shooters",
+    "references": [
+        "GUID:bb5132b0ca60f9647afba64b37d61016",
+        "GUID:69587c11af911bf4fa44958e1910481b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

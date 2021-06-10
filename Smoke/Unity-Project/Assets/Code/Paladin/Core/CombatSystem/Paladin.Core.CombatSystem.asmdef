@@ -1,0 +1,15 @@
+{
+    "name": "Paladin.CombatSystem",
+    "references": [
+        "GUID:01385ea41e36df840b7a3d441f792f21"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
