@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-
-
-namespace Paladin.Player {
+namespace Paladin.Core.Player {
 
     [CreateAssetMenu(menuName = "Input/Input Reader")]
     public class InputReader : ScriptableObject, GameInput.IGameplayActions {
