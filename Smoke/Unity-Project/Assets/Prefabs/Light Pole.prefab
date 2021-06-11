@@ -138,13 +138,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6512922560571342807}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: -0.072, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.37193662, w: 0.9282581}
+  m_LocalPosition: {x: 0.9002328, y: 1.4638963, z: 0.23497908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6512922561119215011}
+  m_Father: {fileID: 4535366993029423885}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6512922560571342801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,11 +210,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6512922560717706718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.072, z: 0}
-  m_LocalScale: {x: 1.5, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.37193662, w: 0.9282581}
+  m_LocalPosition: {x: 0.9002328, y: 1.4638963, z: 0.23497908}
+  m_LocalScale: {x: 1.4999999, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6512922561119215011}
+  m_Father: {fileID: 4535366993029423885}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6512922560717706712
@@ -357,6 +357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6512922561119215011}
+  - component: {fileID: 7521427701529825009}
   - component: {fileID: 471008903}
   m_Layer: 0
   m_Name: LightSource
@@ -376,11 +377,24 @@ Transform:
   m_LocalPosition: {x: -0.394969, y: 0.0027427673, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6512922560571342800}
-  - {fileID: 6512922560717706719}
+  - {fileID: 4535366993029423885}
   m_Father: {fileID: 6512922559962452306}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 43.670002}
+--- !u!114 &7521427701529825009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512922561119215010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00f702ad3c461c4da6f3e15e23d81bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  raycastPoint: {fileID: 6512922561119215011}
 --- !u!95 &471008903
 Animator:
   serializedVersion: 3
@@ -400,3 +414,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &8440003427373518700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4535366993029423885}
+  m_Layer: 0
+  m_Name: Light Source Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4535366993029423885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8440003427373518700}
+  m_LocalRotation: {x: -0, y: -0, z: -0.37193662, w: 0.9282581}
+  m_LocalPosition: {x: -1.6619918, y: -0.50925815, z: -0.23497908}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6512922560571342800}
+  - {fileID: 6512922560717706719}
+  m_Father: {fileID: 6512922561119215011}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

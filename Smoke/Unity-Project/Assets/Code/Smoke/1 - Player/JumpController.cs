@@ -10,7 +10,6 @@ namespace Smoke.Player
 
         [SerializeField] private float jumpForce = 5f;
         [SerializeField] private float distanceFromGround = 0.5f;
-        [SerializeField] private float groundCheckTimeInterval = 0.1f;
         [SerializeField] private float maxTimeJumping = 0.5f;
 
         [SerializeField] private LayerMask groundLayer;
@@ -19,7 +18,6 @@ namespace Smoke.Player
 
         private Rigidbody2D m_rigidbody2D = null;
         private float jumpCounter = 0f;
-        private bool isGrounded = false;
         private bool isJumping = false;
         #endregion
 
@@ -32,7 +30,7 @@ namespace Smoke.Player
 
         private void FixedUpdate()
         {
-            if (isJumping && !isGrounded)
+            if (isJumping)
             {
                 m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, jumpForce);
                 jumpCounter += Time.deltaTime;
@@ -50,23 +48,13 @@ namespace Smoke.Player
             }
         }
 
-        private void OnEnable()
-        {
-            StartCoroutine(CheckGround(groundCheckTimeInterval));
-        }
-
         #endregion
 
         #region Private Methods
-        private IEnumerator CheckGround(float timeInterval)
+        private bool IsGrounded()
         {
-            while (enabled)
-            {
-                var hit = Physics2D.LinecastAll(groundCheck.position, groundCheck.position + (Vector3.down * distanceFromGround), groundLayer);
-                isGrounded = hit.Length > 0;
-
-                yield return new WaitForSeconds(timeInterval);
-            }
+            var hit = Physics2D.LinecastAll(groundCheck.position, groundCheck.position + (Vector3.down * distanceFromGround), groundLayer);
+            return hit.Length > 0;
         }
 
         #endregion
@@ -78,7 +66,7 @@ namespace Smoke.Player
             switch (action.phase)
             {
                 case InputActionPhase.Performed:
-                    if (isGrounded)
+                    if (IsGrounded())
                     {
                         m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, jumpForce);
                         isJumping = true;
