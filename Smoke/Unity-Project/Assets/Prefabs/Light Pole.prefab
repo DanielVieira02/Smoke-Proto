@@ -357,7 +357,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6512922561119215011}
-  - component: {fileID: 7521427701529825009}
   - component: {fileID: 471008903}
   m_Layer: 0
   m_Name: LightSource
@@ -381,20 +380,6 @@ Transform:
   m_Father: {fileID: 6512922559962452306}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 43.670002}
---- !u!114 &7521427701529825009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6512922561119215010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d00f702ad3c461c4da6f3e15e23d81bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 5
-  raycastPoint: {fileID: 6512922561119215011}
 --- !u!95 &471008903
 Animator:
   serializedVersion: 3
