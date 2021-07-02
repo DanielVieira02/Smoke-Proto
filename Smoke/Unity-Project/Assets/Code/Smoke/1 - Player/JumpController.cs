@@ -47,7 +47,7 @@ namespace Smoke.Player
             if (groundCheckPoint != null)
             {
                 Gizmos.color = Color.yellow;
-                Gizmos.DrawCube(groundCheckPoint.position, new Vector3(widthDetection, distanceFromGround));
+                Gizmos.DrawWireCube(groundCheckPoint.position, new Vector3(widthDetection, distanceFromGround));
             }
         }
 
@@ -56,8 +56,8 @@ namespace Smoke.Player
         #region Private Methods
         private bool IsGrounded()
         {
-            var hit = Physics2D.BoxCastAll(groundCheckPoint.position, new Vector2(widthDetection, distanceFromGround), 0f, Vector2.down, distanceFromGround, groundLayer);
-            return hit.Length > 0;
+            var hit = Physics2D.BoxCastAll(groundCheckPoint.position, new Vector2(widthDetection, distanceFromGround), 0f, Vector2.down, distanceFromGround, groundLayer).Length;
+            return hit > 0;
         }
 
         #endregion
