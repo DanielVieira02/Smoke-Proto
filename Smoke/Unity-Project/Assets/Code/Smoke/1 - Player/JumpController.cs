@@ -8,13 +8,16 @@ namespace Smoke.Player
     {
         #region Variables & References
 
+        [Header("Jump settings")]
         [SerializeField] private float jumpForce = 5f;
-        [SerializeField] private float distanceFromGround = 0.5f;
         [SerializeField] private float maxTimeJumping = 0.5f;
 
+        [Header("Ground detection settings")]
         [SerializeField] private LayerMask groundLayer;
+        [SerializeField] private float distanceFromGround = 0.5f;
+        [SerializeField] private float widthDetection = 0.5f;
 
-        [SerializeField] private Transform groundCheck = null;
+        [SerializeField] private Transform groundCheckPoint = null;
 
         private Rigidbody2D m_rigidbody2D = null;
         private float jumpCounter = 0f;
@@ -38,13 +41,13 @@ namespace Smoke.Player
                     isJumping = false;
             } 
         }
-
-        private void OnDrawGizmos()
+        
+        private void OnDrawGizmosSelected()
         {
-            if (groundCheck != null)
+            if (groundCheckPoint != null)
             {
                 Gizmos.color = Color.yellow;
-                Gizmos.DrawLine(groundCheck.position, groundCheck.position + (Vector3.down * distanceFromGround));
+                Gizmos.DrawWireCube(groundCheckPoint.position, new Vector3(widthDetection, distanceFromGround));
             }
         }
 
@@ -53,8 +56,8 @@ namespace Smoke.Player
         #region Private Methods
         private bool IsGrounded()
         {
-            var hit = Physics2D.LinecastAll(groundCheck.position, groundCheck.position + (Vector3.down * distanceFromGround), groundLayer);
-            return hit.Length > 0;
+            var hit = Physics2D.BoxCastAll(groundCheckPoint.position, new Vector2(widthDetection, distanceFromGround), 0f, Vector2.down, distanceFromGround, groundLayer).Length;
+            return hit > 0;
         }
 
         #endregion
